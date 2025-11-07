@@ -8,17 +8,31 @@ print(adatok)
 atlag=sum(adatok)/len(adatok)
 print(f"a beolvasott adatok átlaga: {atlag: .2f}")
 # döntsűk el hogy volt e négyes 3.
-
-# keresűk meg hogy volt e ötös 4.
-with open("jegyek.txt", "r", encoding="utf-8") as fin:
-    jegyek =()
-
-if 5 in jegyek:
-    print("Volt ötös!")
+van=False
+for szam in adatok:
+    if szam==4:
+        van = True
+        break
+if van:
+    print("vam négyes.")
 else:
-    print("Nem volt ötös.")
+    print("nincs négyes")
+# keresűk meg hogy volt e ötös 4.
+van5 = False
+for i in range(len(adatok)):
+    if adatok[i]==5:
+        van5=True
+        break
+if van5:
+    print(f"van ötös, és a(z) {i}. elem.")
+else:
+    print("nincs ötös.")
 # hány darab kilences volt 5.
-
+db=0
+for szam in adatok:
+    if szam == 9:
+        db += 1
+print(f"{db}darab kilences szám van.")
 # mennyi a legnagyobb beirt szám 6.
 
 # hanyadik indexen van a legkisebb elem 7.
