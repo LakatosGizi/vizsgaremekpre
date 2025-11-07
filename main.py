@@ -34,7 +34,19 @@ for szam in adatok:
         db += 1
 print(f"{db}darab kilences szám van.")
 # mennyi a legnagyobb beirt szám 6.
-
+legnagyobb_szam=adatok[0]
+for szam in adatok:
+    if szam>legnagyobb_szam:
+        legnagyobb_szam = szam
+print(f"legnagyobb szám {legnagyobb_szam}")
 # hanyadik indexen van a legkisebb elem 7.
-
+minindex=0
+for i in range(len(adatok)):
+    if adatok[i]< minindex:
+        minindex=i
+print(f"a legkiseb elem a(z) {minindex} és a(z). elem.")
 # ird ki a páros számokat a paros.txt be 8.
+with open ("paros.txt","w") as fout:
+    for szam in adatok:
+        if szam % 2==0:
+            print(szam, file=fout)
